@@ -1,6 +1,17 @@
+# Caesar Cipher
+
+This Python script encrypts and decrypts text using the Caesar Cipher algorithm.
+
+## How it Works
+
+The Caesar Cipher works by shifting each letter in the input text by a fixed number of positions down the alphabet.
+
+## Code
+
+```python
 def caesar_cipher(text, shift, mode='encrypt'):
     result = ''
-    shift = shift % 26
+    shift = shift % 26  # Ensure the shift stays within the alphabet range
 
     if mode == 'decrypt':
         shift = -shift
@@ -12,7 +23,9 @@ def caesar_cipher(text, shift, mode='encrypt'):
             result += chr(shifted)
         else:
             result += char
+
     return result
+
 
 if __name__ == "__main__":
     message = input("Enter your message: ")
@@ -21,3 +34,17 @@ if __name__ == "__main__":
 
     output = caesar_cipher(message, shift, mode)
     print(f"Result: {output}")
+```
+
+## Example
+
+```
+Enter your message: Hello World
+Enter the shift value (e.g., 3): 3
+Choose mode - 'encrypt' or 'decrypt': encrypt
+Result: Khoor Zruog
+```
+
+## Author
+
+Harshith Gowda G S
